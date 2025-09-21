@@ -17,7 +17,10 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // --- Middleware ---
-app.use(cors({ origin: true, credentials: true }));
+const corsOptions = {
+  origin: 'https://misinfo-check.onrender.com'
+};
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.static(path.join(path.resolve(), "frontend")));
