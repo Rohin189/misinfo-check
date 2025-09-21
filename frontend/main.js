@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
         resultDiv.classList.add("hidden");
 
         try {
-            const response = await fetch("http://localhost:5000/api/check/guest", {
+            const response = await fetch("https://misinfo-backend.onrender.com/api/check/guest", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

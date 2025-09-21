@@ -18,7 +18,7 @@
       // Function to handle logout
       const handleLogout = async () => {
         try {
-          await fetch("/api/user/logout", { method: "POST" });
+          await fetch("https://misinfo-backend.onrender.com/api/user/logout", { method: "POST" });
           window.location.href = "/login.html";
         } catch (err) {
           console.error("Logout failed:", err);
@@ -29,7 +29,7 @@
       // Function to fetch user data and populate the dashboard
       const fetchUserData = async () => {
         try {
-          const res = await fetch("/api/user/dashboard", {
+          const res = await fetch("https://misinfo-backend.onrender.com/api/user/dashboard", {
             credentials: "include",
           });
           if (res.ok) {
@@ -49,7 +49,7 @@
       const loadDashboardData = async () => {
         try {
           // Fetch stats
-          const statsRes = await fetch("/api/dashboard/stats", {
+          const statsRes = await fetch("https://misinfo-backend.onrender.com/api/dashboard/stats", {
             credentials: "include",
           });
           if (!statsRes.ok) throw new Error("Failed to fetch stats");
@@ -62,7 +62,7 @@
           }
 
           // Fetch history
-          const historyRes = await fetch("/api/dashboard/history", {
+          const historyRes = await fetch("https://misinfo-backend.onrender.com/api/dashboard/history", {
             credentials: "include",
           });
           if (!historyRes.ok) throw new Error("Failed to fetch history");
@@ -103,7 +103,7 @@
         resultDiv.classList.add("hidden");
 
         try {
-          const res = await fetch("/api/check/", {
+          const res = await fetch("https://misinfo-backend.onrender.com/api/check/", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ text }),

@@ -88,7 +88,7 @@
         <button type="submit">Login</button>
       </form>
       <p id="message"></p>
-      <a id="signup-link" href="/api/user/signup">Create an Account</a>
+      <a id="signup-link" href="https://misinfo-check.onrender.com/api/user/signup">Create an Account</a>
     </div>
 
     <script>
@@ -116,7 +116,7 @@
         }
 
         try {
-          const res = await fetch("/api/user/login", {
+          const res = await fetch("https://misinfo-check.onrender.com/api/user/login", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             credentials: "include",

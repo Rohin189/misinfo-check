@@ -4,6 +4,7 @@ import Report from "../models/Report.js";
 import path from "path";
 import {authMiddleware} from "../middleware/auth.js";
 
+
 const router = express.Router();
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
 
