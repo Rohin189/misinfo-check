@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon --require dotenv/config backend/server.js",
-    "dev": "nodemon bserver.js"
+    "dev": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
