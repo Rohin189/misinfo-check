@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* --- CSS Variables for easy theming --- */
+      :root {
+        --bg-color: #f4f7f6;
+        --card-bg: #ffffff;
+        --text-color: #333;
+        --primary-color: #007bff;
+        --primary-hover: #0056b3;
+        --border-color: #e0e0e0;
+        --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        --verdict-true: #28a745;
+        --verdict-false: #dc3545;
+        --verdict-misleading: #ffc107;
+      }
+
+      /* --- General Styles --- */
+      body {
+        font-family: "Inter", sans-serif;
+        margin: 0;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 100vh;
+        padding: 40px 20px;
+      }
+
+      /* --- Main Container --- */
+      .container {
+        width: 100%;
+        max-width: 600px;
+      }
+
+      /* --- Header --- */
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+      }
+
+      #welcome {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin: 0;
+      }
+
+      #logoutBtn {
+        background: none;
+        border: none;
+        color: var(--primary-color);
+        font-weight: 500;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: color 0.2s;
+      }
+
+      #logoutBtn:hover {
+        color: var(--primary-hover);
+      }
+
+      /* --- Misinformation Checker Card --- */
+      .checker-card {
+        background-color: var(--card-bg);
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: var(--shadow);
+      }
+
+      .checker-card h3 {
+        margin-top: 0;
+        font-size: 1.25rem;
+      }
+
+      #newsText {
+        width: 100%;
+        min-height: 120px;
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid var(--border-color);
+        font-family: inherit;
+        font-size: 1rem;
+        resize: vertical;
+        box-sizing: border-box;
+        transition: border-color 0.2s, box-shadow 0.2s;
+      }
+
+      #newsText:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+      }
+
+      #checkBtn {
+        width: 100%;
+        padding: 14px;
+        margin-top: 20px;
+        border: none;
+        border-radius: 8px;
+        background-color: var(--primary-color);
+        color: white;
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background-color 0.2s, transform 0.1s;
+      }
+
+      #checkBtn:hover {
+        background-color: var(--primary-hover);
+      }
+
+      #checkBtn:active {
+        transform: scale(0.98);
+      }
+
+      #checkBtn:disabled {
+        background-color: #a0c3ff;
+        cursor: not-allowed;
+      }
+
+      /* --- Result Display --- */
+      #result {
+        margin-top: 25px;
+        padding: 20px;
+        border-radius: 8px;
+        border-left: 5px solid;
+        transition: opacity 0.3s, transform 0.3s;
+      }
+
+      #result.hidden {
+        display: none;
+      }
+
+      #verdictText strong {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 1.1rem;
+      }
+
+      /* Verdict Colors */
+      .verdict-True {
+        background: #eaf6ec;
+        border-color: var(--verdict-true);
+        color: #1c5c2d;
+      }
+      .verdict-False {
+        background: #fbebed;
+        border-color: var(--verdict-false);
+        color: #8d212b;
+      }
+      .verdict-Misleading {
+        background: #fff8e6;
+        border-color: var(--verdict-misleading);
+        color: #856404;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h2 id="welcome">Loading...</h2>
+        <button id="logoutBtn">Logout</button>
+      </header>
+
+      <main class="checker-card">
+        <h3>🔎 Misinformation Checker</h3>
+        <textarea
+          id="newsText"
+          rows="5"
+          placeholder="Paste news or article text here..."
+        ></textarea>
+        <button id="checkBtn">Check</button>
+
+        <div id="result" class="hidden">
+          <p id="verdictText"></p>
+        </div>
+      </main>
+    </div>
+
+    <script src="/dashboard.js">
+      // Get the elements
+
+    </script>
+</body>
+</html>
