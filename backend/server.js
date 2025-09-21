@@ -36,7 +36,7 @@ app.use("/api/user", dashboardRoutes); // The route inside will be /dashboard
 // --- Final Fallback for Single Page Applications ---
 // This will serve index.html for any route not matched above
 app.get("/", (req, res) => {
-  res.sendFile(path.join(path.resolve(), "frontend", "index.html"));
+  res.sendFile(path.join(path.resolve(), "frontend", "homepage.html"));
 });
 
 // --- MongoDB & Server Start ---
